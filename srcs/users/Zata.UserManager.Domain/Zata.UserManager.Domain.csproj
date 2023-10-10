@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\infrastructures\Zata.Infrastructures.Public\Zata.Infrastructures.Public.csproj" />
+    <ProjectReference Include="..\..\..\libs\Zata.Extension\Zata.Extension.csproj" />
+    <ProjectReference Include="..\Zata.UserManager.Domain.Shared\Zata.UserManager.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

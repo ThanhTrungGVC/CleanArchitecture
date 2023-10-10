@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Zata.PaymentManager.Application.Contracts\Zata.PaymentManager.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Zata.PaymentManager.Domain\Zata.PaymentManager.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

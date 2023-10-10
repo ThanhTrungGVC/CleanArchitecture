@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Zata.OrderManager.Application.Contracts\Zata.OrderManager.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Zata.OrderManager.Domain\Zata.OrderManager.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
