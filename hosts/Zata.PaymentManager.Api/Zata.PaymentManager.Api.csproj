@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\srcs\payments\Zata.PaymentManager.Application\Zata.PaymentManager.Application.csproj" />
+    <ProjectReference Include="..\..\srcs\payments\Zata.PaymentManager.Domain\Zata.PaymentManager.Domain.csproj" />
+    <ProjectReference Include="..\..\srcs\payments\Zata.PaymentManager.MySql.EfCore\Zata.PaymentManager.MySql.EfCore.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\srcs\productions\Zata.ProductionManager.Application\Zata.ProductionManager.Application.csproj" />
+    <ProjectReference Include="..\..\srcs\productions\Zata.ProductionManager.Domain\Zata.ProductionManager.Domain.csproj" />
+    <ProjectReference Include="..\..\srcs\productions\Zata.ProductionManager.MySql.EfCore\Zata.ProductionManager.MySql.EfCore.csproj" />
+  </ItemGroup>
+
 </Project>
