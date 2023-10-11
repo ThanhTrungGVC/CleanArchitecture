@@ -15,13 +15,69 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{60CF80F7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructures", "infrastructures", "{99074463-47E8-47A7-94EE-3CACCE6E1CF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zata.ProductionManager.Api", "hosts\Zata.ProductionManager.Api\Zata.ProductionManager.Api.csproj", "{8EF4BD70-8CC3-4812-9AC6-2D8A3A30DA11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.ProductionManager.Api", "hosts\Zata.ProductionManager.Api\Zata.ProductionManager.Api.csproj", "{8EF4BD70-8CC3-4812-9AC6-2D8A3A30DA11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zata.OrderManager.Api", "hosts\Zata.OrderManager.Api\Zata.OrderManager.Api.csproj", "{C14D5AD0-FD57-436B-8A40-D1837F85556C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.OrderManager.Api", "hosts\Zata.OrderManager.Api\Zata.OrderManager.Api.csproj", "{C14D5AD0-FD57-436B-8A40-D1837F85556C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zata.PaymentManager.Api", "hosts\Zata.PaymentManager.Api\Zata.PaymentManager.Api.csproj", "{61112063-67C3-4C10-BD4D-B9E761969B69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.PaymentManager.Api", "hosts\Zata.PaymentManager.Api\Zata.PaymentManager.Api.csproj", "{61112063-67C3-4C10-BD4D-B9E761969B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zata.UserManager.Api", "hosts\Zata.UserManager.Api\Zata.UserManager.Api.csproj", "{D7CC813A-1841-4AAE-BABE-A6C7A73C17B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.Api", "hosts\Zata.UserManager.Api\Zata.UserManager.Api.csproj", "{D7CC813A-1841-4AAE-BABE-A6C7A73C17B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.Infrastructures", "infrastructures\Zata.Infrastructures\Zata.Infrastructures.csproj", "{E2DBBD3C-7678-4D1E-875D-CB9C4B40C89C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.Infrastructures.Public", "infrastructures\Zata.Infrastructures.Public\Zata.Infrastructures.Public.csproj", "{79774B05-D167-49E2-80F3-79BCABCF577A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata", "libs\Zata\Zata.csproj", "{59BBBC8F-9A65-4355-9351-0FDB3202E4CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.Extension", "libs\Zata.Extension\Zata.Extension.csproj", "{977A38BC-19A3-4398-9EA7-51CC5566A011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "orders", "orders", "{7814416B-368D-4AAC-BFAB-9D9BD15A962C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "payments", "payments", "{933E8F79-0FCC-41B5-914D-5F48619A701D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "productions", "productions", "{77115E3E-E97C-4282-A86F-25632E2290F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "users", "users", "{CC5A52A7-597D-41CF-931E-8E6421AB66A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.OrderManager.Application", "srcs\orders\Zata.OrderManager.Application\Zata.OrderManager.Application.csproj", "{35AE577E-CBA4-436D-846E-EA195F58820E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.OrderManager.Application.Contracts", "srcs\orders\Zata.OrderManager.Application.Contracts\Zata.OrderManager.Application.Contracts.csproj", "{C632C8BA-F58B-4947-8387-0D0A82CE090A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.OrderManager.Domain", "srcs\orders\Zata.OrderManager.Domain\Zata.OrderManager.Domain.csproj", "{BA1FA3D0-002D-4103-889E-0A8BE62FD367}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.OrderManager.Domain.Shared", "srcs\orders\Zata.OrderManager.Domain.Shared\Zata.OrderManager.Domain.Shared.csproj", "{9A9CC90B-F175-43A5-B290-8E4255E0BB1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.OrderManager.MySql.EfCore", "srcs\orders\Zata.OrderManager.MySql.EfCore\Zata.OrderManager.MySql.EfCore.csproj", "{FB26B72D-1693-41D9-BEBC-2EF646A4202F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.PaymentManager.Application", "srcs\payments\Zata.PaymentManager.Application\Zata.PaymentManager.Application.csproj", "{054F0570-686B-4A43-8DD4-9FD8752CBAF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.PaymentManager.Application.Contracts", "srcs\payments\Zata.PaymentManager.Application.Contracts\Zata.PaymentManager.Application.Contracts.csproj", "{9AD32601-DAFB-4D42-8BD3-F0C3147CA402}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.PaymentManager.Domain", "srcs\payments\Zata.PaymentManager.Domain\Zata.PaymentManager.Domain.csproj", "{D5004C38-C0C3-4B2C-9A15-5D8B32274C1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.PaymentManager.Domain.Shared", "srcs\payments\Zata.PaymentManager.Domain.Shared\Zata.PaymentManager.Domain.Shared.csproj", "{E44153D2-7A14-4038-9C40-46DECD9964DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.PaymentManager.MySql.EfCore", "srcs\payments\Zata.PaymentManager.MySql.EfCore\Zata.PaymentManager.MySql.EfCore.csproj", "{8E752DF0-0B80-4F73-8A89-B18ABE34C6C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.ProductionManager.Application", "srcs\productions\Zata.ProductionManager.Application\Zata.ProductionManager.Application.csproj", "{2F1493AB-7198-41DE-A44C-83984C45582D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.ProductionManager.Application.Contracts", "srcs\productions\Zata.ProductionManager.Application.Contracts\Zata.ProductionManager.Application.Contracts.csproj", "{F2CAAB8F-170D-400B-9D53-562B22988779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.ProductionManager.Domain", "srcs\productions\Zata.ProductionManager.Domain\Zata.ProductionManager.Domain.csproj", "{D6F4EC6F-CF61-498C-AEBB-DEA27EC05C6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.ProductionManager.Domain.Shared", "srcs\productions\Zata.ProductionManager.Domain.Shared\Zata.ProductionManager.Domain.Shared.csproj", "{42F31022-4CAC-4370-BDD8-974E460B003B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.ProductionManager.MySql.EfCore", "srcs\productions\Zata.ProductionManager.MySql.EfCore\Zata.ProductionManager.MySql.EfCore.csproj", "{79693F85-4610-4876-9BA6-70C95B7601A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.Application", "srcs\users\Zata.UserManager.Application\Zata.UserManager.Application.csproj", "{D184BB66-CD3D-47FD-9654-2AE8B3CE8397}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.Application.Contracts", "srcs\users\Zata.UserManager.Application.Contracts\Zata.UserManager.Application.Contracts.csproj", "{AD48443C-8BE6-419E-A3D8-AF3A9AF77DB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.Domain", "srcs\users\Zata.UserManager.Domain\Zata.UserManager.Domain.csproj", "{61523187-18A0-49E9-AF4A-207EB0139E7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.Domain.Shared", "srcs\users\Zata.UserManager.Domain.Shared\Zata.UserManager.Domain.Shared.csproj", "{7E949112-E9A9-43F9-B85E-61CBD05B373C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.MySql.EfCore", "srcs\users\Zata.UserManager.MySql.EfCore\Zata.UserManager.MySql.EfCore.csproj", "{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +101,102 @@ Global
 		{D7CC813A-1841-4AAE-BABE-A6C7A73C17B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CC813A-1841-4AAE-BABE-A6C7A73C17B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7CC813A-1841-4AAE-BABE-A6C7A73C17B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DBBD3C-7678-4D1E-875D-CB9C4B40C89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DBBD3C-7678-4D1E-875D-CB9C4B40C89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DBBD3C-7678-4D1E-875D-CB9C4B40C89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DBBD3C-7678-4D1E-875D-CB9C4B40C89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79774B05-D167-49E2-80F3-79BCABCF577A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79774B05-D167-49E2-80F3-79BCABCF577A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79774B05-D167-49E2-80F3-79BCABCF577A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79774B05-D167-49E2-80F3-79BCABCF577A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59BBBC8F-9A65-4355-9351-0FDB3202E4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BBBC8F-9A65-4355-9351-0FDB3202E4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BBBC8F-9A65-4355-9351-0FDB3202E4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BBBC8F-9A65-4355-9351-0FDB3202E4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{977A38BC-19A3-4398-9EA7-51CC5566A011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977A38BC-19A3-4398-9EA7-51CC5566A011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977A38BC-19A3-4398-9EA7-51CC5566A011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{977A38BC-19A3-4398-9EA7-51CC5566A011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35AE577E-CBA4-436D-846E-EA195F58820E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35AE577E-CBA4-436D-846E-EA195F58820E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35AE577E-CBA4-436D-846E-EA195F58820E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35AE577E-CBA4-436D-846E-EA195F58820E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C632C8BA-F58B-4947-8387-0D0A82CE090A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C632C8BA-F58B-4947-8387-0D0A82CE090A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C632C8BA-F58B-4947-8387-0D0A82CE090A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C632C8BA-F58B-4947-8387-0D0A82CE090A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1FA3D0-002D-4103-889E-0A8BE62FD367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1FA3D0-002D-4103-889E-0A8BE62FD367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1FA3D0-002D-4103-889E-0A8BE62FD367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1FA3D0-002D-4103-889E-0A8BE62FD367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9CC90B-F175-43A5-B290-8E4255E0BB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9CC90B-F175-43A5-B290-8E4255E0BB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9CC90B-F175-43A5-B290-8E4255E0BB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9CC90B-F175-43A5-B290-8E4255E0BB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB26B72D-1693-41D9-BEBC-2EF646A4202F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB26B72D-1693-41D9-BEBC-2EF646A4202F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB26B72D-1693-41D9-BEBC-2EF646A4202F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB26B72D-1693-41D9-BEBC-2EF646A4202F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054F0570-686B-4A43-8DD4-9FD8752CBAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054F0570-686B-4A43-8DD4-9FD8752CBAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054F0570-686B-4A43-8DD4-9FD8752CBAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054F0570-686B-4A43-8DD4-9FD8752CBAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD32601-DAFB-4D42-8BD3-F0C3147CA402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD32601-DAFB-4D42-8BD3-F0C3147CA402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD32601-DAFB-4D42-8BD3-F0C3147CA402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD32601-DAFB-4D42-8BD3-F0C3147CA402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5004C38-C0C3-4B2C-9A15-5D8B32274C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5004C38-C0C3-4B2C-9A15-5D8B32274C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5004C38-C0C3-4B2C-9A15-5D8B32274C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5004C38-C0C3-4B2C-9A15-5D8B32274C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E44153D2-7A14-4038-9C40-46DECD9964DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44153D2-7A14-4038-9C40-46DECD9964DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44153D2-7A14-4038-9C40-46DECD9964DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44153D2-7A14-4038-9C40-46DECD9964DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E752DF0-0B80-4F73-8A89-B18ABE34C6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E752DF0-0B80-4F73-8A89-B18ABE34C6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E752DF0-0B80-4F73-8A89-B18ABE34C6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E752DF0-0B80-4F73-8A89-B18ABE34C6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1493AB-7198-41DE-A44C-83984C45582D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1493AB-7198-41DE-A44C-83984C45582D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1493AB-7198-41DE-A44C-83984C45582D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1493AB-7198-41DE-A44C-83984C45582D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CAAB8F-170D-400B-9D53-562B22988779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CAAB8F-170D-400B-9D53-562B22988779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2CAAB8F-170D-400B-9D53-562B22988779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CAAB8F-170D-400B-9D53-562B22988779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F4EC6F-CF61-498C-AEBB-DEA27EC05C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F4EC6F-CF61-498C-AEBB-DEA27EC05C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F4EC6F-CF61-498C-AEBB-DEA27EC05C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F4EC6F-CF61-498C-AEBB-DEA27EC05C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F31022-4CAC-4370-BDD8-974E460B003B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F31022-4CAC-4370-BDD8-974E460B003B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F31022-4CAC-4370-BDD8-974E460B003B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F31022-4CAC-4370-BDD8-974E460B003B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79693F85-4610-4876-9BA6-70C95B7601A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79693F85-4610-4876-9BA6-70C95B7601A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79693F85-4610-4876-9BA6-70C95B7601A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79693F85-4610-4876-9BA6-70C95B7601A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D184BB66-CD3D-47FD-9654-2AE8B3CE8397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D184BB66-CD3D-47FD-9654-2AE8B3CE8397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D184BB66-CD3D-47FD-9654-2AE8B3CE8397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D184BB66-CD3D-47FD-9654-2AE8B3CE8397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD48443C-8BE6-419E-A3D8-AF3A9AF77DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD48443C-8BE6-419E-A3D8-AF3A9AF77DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD48443C-8BE6-419E-A3D8-AF3A9AF77DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD48443C-8BE6-419E-A3D8-AF3A9AF77DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61523187-18A0-49E9-AF4A-207EB0139E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61523187-18A0-49E9-AF4A-207EB0139E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61523187-18A0-49E9-AF4A-207EB0139E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61523187-18A0-49E9-AF4A-207EB0139E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E949112-E9A9-43F9-B85E-61CBD05B373C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E949112-E9A9-43F9-B85E-61CBD05B373C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E949112-E9A9-43F9-B85E-61CBD05B373C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E949112-E9A9-43F9-B85E-61CBD05B373C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +206,34 @@ Global
 		{C14D5AD0-FD57-436B-8A40-D1837F85556C} = {902CA16E-D530-47E7-83BE-7DBD44E6D442}
 		{61112063-67C3-4C10-BD4D-B9E761969B69} = {902CA16E-D530-47E7-83BE-7DBD44E6D442}
 		{D7CC813A-1841-4AAE-BABE-A6C7A73C17B4} = {902CA16E-D530-47E7-83BE-7DBD44E6D442}
+		{E2DBBD3C-7678-4D1E-875D-CB9C4B40C89C} = {99074463-47E8-47A7-94EE-3CACCE6E1CF8}
+		{79774B05-D167-49E2-80F3-79BCABCF577A} = {99074463-47E8-47A7-94EE-3CACCE6E1CF8}
+		{59BBBC8F-9A65-4355-9351-0FDB3202E4CB} = {89577EB7-B791-4EC3-AF39-C89C8D7CC72B}
+		{977A38BC-19A3-4398-9EA7-51CC5566A011} = {89577EB7-B791-4EC3-AF39-C89C8D7CC72B}
+		{7814416B-368D-4AAC-BFAB-9D9BD15A962C} = {0EE3D8B2-D492-4E5F-9EA1-7952CC618A8D}
+		{933E8F79-0FCC-41B5-914D-5F48619A701D} = {0EE3D8B2-D492-4E5F-9EA1-7952CC618A8D}
+		{77115E3E-E97C-4282-A86F-25632E2290F2} = {0EE3D8B2-D492-4E5F-9EA1-7952CC618A8D}
+		{CC5A52A7-597D-41CF-931E-8E6421AB66A1} = {0EE3D8B2-D492-4E5F-9EA1-7952CC618A8D}
+		{35AE577E-CBA4-436D-846E-EA195F58820E} = {7814416B-368D-4AAC-BFAB-9D9BD15A962C}
+		{C632C8BA-F58B-4947-8387-0D0A82CE090A} = {7814416B-368D-4AAC-BFAB-9D9BD15A962C}
+		{BA1FA3D0-002D-4103-889E-0A8BE62FD367} = {7814416B-368D-4AAC-BFAB-9D9BD15A962C}
+		{9A9CC90B-F175-43A5-B290-8E4255E0BB1F} = {7814416B-368D-4AAC-BFAB-9D9BD15A962C}
+		{FB26B72D-1693-41D9-BEBC-2EF646A4202F} = {7814416B-368D-4AAC-BFAB-9D9BD15A962C}
+		{054F0570-686B-4A43-8DD4-9FD8752CBAF9} = {933E8F79-0FCC-41B5-914D-5F48619A701D}
+		{9AD32601-DAFB-4D42-8BD3-F0C3147CA402} = {933E8F79-0FCC-41B5-914D-5F48619A701D}
+		{D5004C38-C0C3-4B2C-9A15-5D8B32274C1D} = {933E8F79-0FCC-41B5-914D-5F48619A701D}
+		{E44153D2-7A14-4038-9C40-46DECD9964DF} = {933E8F79-0FCC-41B5-914D-5F48619A701D}
+		{8E752DF0-0B80-4F73-8A89-B18ABE34C6C3} = {933E8F79-0FCC-41B5-914D-5F48619A701D}
+		{2F1493AB-7198-41DE-A44C-83984C45582D} = {77115E3E-E97C-4282-A86F-25632E2290F2}
+		{F2CAAB8F-170D-400B-9D53-562B22988779} = {77115E3E-E97C-4282-A86F-25632E2290F2}
+		{D6F4EC6F-CF61-498C-AEBB-DEA27EC05C6C} = {77115E3E-E97C-4282-A86F-25632E2290F2}
+		{42F31022-4CAC-4370-BDD8-974E460B003B} = {77115E3E-E97C-4282-A86F-25632E2290F2}
+		{79693F85-4610-4876-9BA6-70C95B7601A7} = {77115E3E-E97C-4282-A86F-25632E2290F2}
+		{D184BB66-CD3D-47FD-9654-2AE8B3CE8397} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
+		{AD48443C-8BE6-419E-A3D8-AF3A9AF77DB8} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
+		{61523187-18A0-49E9-AF4A-207EB0139E7D} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
+		{7E949112-E9A9-43F9-B85E-61CBD05B373C} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
+		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE2EA8B1-14D9-48DE-A725-B998CFB7EA69}
