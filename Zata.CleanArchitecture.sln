@@ -79,6 +79,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.Domain.Sha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zata.UserManager.MySql.EfCore", "srcs\users\Zata.UserManager.MySql.EfCore\Zata.UserManager.MySql.EfCore.csproj", "{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zata.Repository.MySql.EfCore", "libs\Zata.Repository.MySql.EfCore\Zata.Repository.MySql.EfCore.csproj", "{73A27BBB-1593-422A-87A9-61AF67C9CFEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,6 +199,10 @@ Global
 		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A27BBB-1593-422A-87A9-61AF67C9CFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A27BBB-1593-422A-87A9-61AF67C9CFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A27BBB-1593-422A-87A9-61AF67C9CFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A27BBB-1593-422A-87A9-61AF67C9CFEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,6 +240,7 @@ Global
 		{61523187-18A0-49E9-AF4A-207EB0139E7D} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
 		{7E949112-E9A9-43F9-B85E-61CBD05B373C} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
 		{FDAFAC60-0BFD-4669-9C71-F14C17BEF171} = {CC5A52A7-597D-41CF-931E-8E6421AB66A1}
+		{73A27BBB-1593-422A-87A9-61AF67C9CFEF} = {89577EB7-B791-4EC3-AF39-C89C8D7CC72B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE2EA8B1-14D9-48DE-A725-B998CFB7EA69}
