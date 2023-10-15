@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Reflection;
+using Zata.Attributes;
 using Zata.Extension;
 using Zata.Extension.Reflection;
 using Zata.MultiTenancy;
@@ -259,18 +260,15 @@ namespace Zata.Entities
             return Expression.Lambda<Func<TEntity, bool>>(lambdaBody, lambdaParam);
         }
 
-        //public static void TrySetId<TKey>(
-        //    IEntity<TKey> entity,
-        //    Func<TKey> idFactory,
-        //    bool checkForDisableIdGenerationAttribute = false)
-        //{
-        //    ObjectHelper.TrySetProperty(
-        //        entity,
-        //        x => x.Id,
-        //        idFactory,
-        //        checkForDisableIdGenerationAttribute
-        //            ? new Type[] { typeof(DisableIdGenerationAttribute) }
-        //            : new Type[] { });
-        //}
+        public static void TrySetId<TKey>(IEntity<TKey> entity, Func<TKey> idFactory, bool checkForDisableIdGenerationAttribute = false)
+        {
+            ObjectHelper.TrySetProperty(
+                entity,
+                x => x.Id,
+                idFactory,
+                checkForDisableIdGenerationAttribute
+                    ? new Type[] { typeof(DisableIdGenerationAttribute) }
+                    : Array.Empty<Type>());
+        }
     }
 }

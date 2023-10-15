@@ -57,5 +57,7 @@
                 ? source.Where(predicate)
                 : source;
         }
+
+        public static bool IsNulOrEmpty<T>(this IEnumerable<T>? sources) => sources == null || !sources.Any();
     }
 }

@@ -15,7 +15,19 @@ namespace Zata.Repository.MySql.EfCore
 
         protected TContext GetDbContext() => _dbContext;
 
-        protected DbConnection GetDbConnection() => _dbContext.Database.GetDbConnection();
+        protected async Task<DbConnection> GetDbConnectionAsync(CancellationToken cancellationToken = default)
+        {
+            if (!await _dbContext.Database.CanConnectAsync(cancellationToken).ConfigureAwait(false))
+                throw new InvalidOperationException("can't connecting to database");
+
+            var connection = _dbContext.Database.GetDbConnection() ?? throw new InvalidOperationException("get connected database failure");
+            
+            if (connection.State == System.Data.ConnectionState.Closed)
+                await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+
+            return connection;
+        } 
+
 
         protected DbTransaction? GetDbTransaction() => _dbContext.Database.CurrentTransaction?.GetDbTransaction();
 
