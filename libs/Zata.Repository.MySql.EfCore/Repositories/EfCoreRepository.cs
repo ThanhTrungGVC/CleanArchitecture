@@ -8,12 +8,12 @@ using Zata.Values;
 
 namespace Zata.Repository.MySql.EfCore.Repositories
 {
-    public class EfCoreRepository<TContext, TEntity> : ZataEntityFrameworkCore<TContext>, IEfCoreRepository<TContext, TEntity> where TContext : DbContext where TEntity : Entity
+    public abstract class EfCoreRepository<TContext, TEntity> : ZataEntityFrameworkCore<TContext>, IEfCoreRepository<TEntity> where TContext : DbContext where TEntity : Entity
     {
         private readonly TContext _dbContext;
         private readonly DbSet<TEntity> _entity;
 
-        public EfCoreRepository(TContext dbContext) : base(dbContext)
+        protected EfCoreRepository(TContext dbContext) : base(dbContext)
         {
             _dbContext = GetDbContext();
             _entity = _dbContext.Set<TEntity>();
@@ -21,18 +21,15 @@ namespace Zata.Repository.MySql.EfCore.Repositories
 
         protected override async ValueTask DoDisposeAsync()
         {
-            if (_dbContext.Database != null)
-            {
-                var connection = _dbContext.Database.GetDbConnection();
+            var connection = GetCurrentConnection();
 
-                if (connection != null && connection.State != System.Data.ConnectionState.Closed)
-                    await _dbContext.Database.CloseConnectionAsync().ConfigureAwait(false);
+            if (connection.State != System.Data.ConnectionState.Closed)
+                await _dbContext.Database.CloseConnectionAsync().ConfigureAwait(false);
 
-                await _dbContext.DisposeAsync().ConfigureAwait(false);
-            }
+            await _dbContext.DisposeAsync().ConfigureAwait(false);
         }
 
-        protected IQueryable<TEntity> GetQuery(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false)
+        protected virtual IQueryable<TEntity> GetQuery(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false)
         {
             var query = _entity.AsQueryable();
 
@@ -45,7 +42,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return query;
         }
 
-        public async Task<TEntity[]> GetAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity[]> GetAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
         {
             var query = GetQuery(fredicate, isTracking);
 
@@ -54,7 +51,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return entities;
         }
 
-        public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
         {
             var query = GetQuery(fredicate, isTracking);
 
@@ -72,7 +69,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return entity;
         }
 
-        public async Task<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
         {
             var query = GetQuery(fredicate, isTracking);
 
@@ -81,7 +78,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return entity;
         }
 
-        public async Task<TEntity> SingleAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity> SingleAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default)
         {
             var query = GetQuery(fredicate, isTracking);
 
@@ -90,7 +87,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return entity;
         }
 
-        public async Task<TEntity> InsertAsync(TEntity entity, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity> InsertAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
             Check.NotNull(entity, nameof(entity));
 
@@ -128,7 +125,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             EntityHelper.TrySetId(entity, () => Guid.NewGuid(), true);
         }
 
-        public async Task<int> InsertManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+        public virtual async Task<int> InsertManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
         {
             if (entities.IsNulOrEmpty())
                 return 0;
@@ -146,7 +143,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return result;
         }
 
-        public async Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
             CheckAndSetModifiledDate(entity);
 
@@ -155,7 +152,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return updated;
         }
 
-        protected void CheckAndSetModifiledDate(TEntity entity)
+        protected virtual void CheckAndSetModifiledDate(TEntity entity)
         {
             if (entity is IHasModificationTime entity2)
             {
@@ -163,7 +160,7 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             }
         }
 
-        public async Task<int> UpdateManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+        public virtual async Task<int> UpdateManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
         {
             if (entities.IsNulOrEmpty())
                 return 0;
@@ -177,14 +174,14 @@ namespace Zata.Repository.MySql.EfCore.Repositories
             return await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<TEntity> DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
+        public virtual async Task<TEntity> DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
             var deleted = _dbContext.Remove(entity).Entity;
             await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             return deleted;
         }
 
-        public async Task<int> DeleteManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+        public virtual async Task<int> DeleteManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
         {
             if (entities.IsNulOrEmpty())
                 return 0;

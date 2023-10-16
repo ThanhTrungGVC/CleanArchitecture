@@ -1,8 +1,9 @@
-﻿using System.Data.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 namespace Zata.Repository.MySql.EfCore.Uow
 {
-    public interface IUnitOfWork : IAsyncDisposable
+    public interface IUnitOfWork<TContext> : IAsyncDisposable where TContext : DbContext
     {
         /// <summary>
         /// Started one database transaction

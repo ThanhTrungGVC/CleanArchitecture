@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Zata.ProductionManager.Domain.Repositories.EfCore;
 
 namespace Zata.ProductionManager.Api.Controllers
 {
@@ -6,6 +7,8 @@ namespace Zata.ProductionManager.Api.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        private readonly IProductEfCoreRepository _productEfCore;
+
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -13,9 +16,10 @@ namespace Zata.ProductionManager.Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IProductEfCoreRepository productEfCore)
         {
             _logger = logger;
+            _productEfCore = productEfCore;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -28,6 +32,18 @@ namespace Zata.ProductionManager.Api.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> InsertDemoProductionAsync([FromQuery] string name)
+        {
+            var production = new Domain.Entities.Product();
+            production.Name = name;
+
+            await using var repo = _productEfCore;
+            var inserted = await repo.InsertAsync(production);
+
+            return Ok(inserted);
         }
     }
 }

@@ -1,15 +1,17 @@
-﻿namespace Zata.Repository.MySql.EfCore.Uow
-{
-    public class UnitOfWorkManager : IUnitOfWorkManager
-    {
-        private readonly IUnitOfWork _uow;
+﻿using Microsoft.EntityFrameworkCore;
 
-        public UnitOfWorkManager(IUnitOfWork uow)
+namespace Zata.Repository.MySql.EfCore.Uow
+{
+    public class UnitOfWorkManager<TContext> : IUnitOfWorkManager<TContext> where TContext : DbContext
+    {
+        private readonly IUnitOfWork<TContext> _uow;
+
+        public UnitOfWorkManager(IUnitOfWork<TContext> uow)
         {
             _uow = uow;
         }
 
-        public async Task<IUnitOfWork> BeginTransactionAsync(bool isRequireNew = false, CancellationToken cancellationToken = default)
+        public async Task<IUnitOfWork<TContext>> BeginTransactionAsync(bool isRequireNew = false, CancellationToken cancellationToken = default)
         {
             await _uow.BeginTransactionAsync(isRequireNew, cancellationToken);
             return _uow;

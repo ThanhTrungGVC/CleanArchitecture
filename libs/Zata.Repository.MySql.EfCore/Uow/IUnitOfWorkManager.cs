@@ -1,7 +1,9 @@
-﻿namespace Zata.Repository.MySql.EfCore.Uow
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Zata.Repository.MySql.EfCore.Uow
 {
-    public interface IUnitOfWorkManager
+    public interface IUnitOfWorkManager<TContext> where TContext : DbContext
     {
-        Task<IUnitOfWork> BeginTransactionAsync(bool isRequireNew = false, CancellationToken cancellationToken = default);
+        Task<IUnitOfWork<TContext>> BeginTransactionAsync(bool isRequireNew = false, CancellationToken cancellationToken = default);
     }
 }

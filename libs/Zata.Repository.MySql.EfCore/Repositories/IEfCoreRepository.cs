@@ -5,7 +5,7 @@ using Zata.Entities;
 
 namespace Zata.Repository.MySql.EfCore.Repositories
 {
-    public interface IEfCoreRepository<TContext, TEntity> where TContext : DbContext where TEntity : Entity
+    public interface IEfCoreRepository<TEntity> : IAsyncDisposable where TEntity : Entity
     {
         Task<TEntity[]> GetAsync(Expression<Func<TEntity, bool>>? fredicate, bool isTracking = false, CancellationToken cancellationToken = default);
 

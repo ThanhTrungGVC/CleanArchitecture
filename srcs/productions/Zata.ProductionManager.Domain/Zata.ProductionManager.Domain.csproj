@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\infrastructures\Zata.Infrastructures.Public\Zata.Infrastructures.Public.csproj" />
     <ProjectReference Include="..\..\..\libs\Zata.Extension\Zata.Extension.csproj" />
+    <ProjectReference Include="..\..\..\libs\Zata.Repository.MySql.EfCore\Zata.Repository.MySql.EfCore.csproj" />
     <ProjectReference Include="..\..\payments\Zata.PaymentManager.Domain.Shared\Zata.PaymentManager.Domain.Shared.csproj" />
   </ItemGroup>
 

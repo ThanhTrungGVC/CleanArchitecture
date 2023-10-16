@@ -1,3 +1,7 @@
+using Microsoft.Extensions.Configuration;
+using Zata.ProductionManager.MySql.EfCore;
+using Zata.Factory;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// add mySql repo
+builder.Services.AddProductionDbContextMySql(builder.Configuration.GetConnectionString("ProductionDbContext"));
+var repoModule = new ProductionMySqlEfCoreModule(builder.Services);
+repoModule.ConfigureServices();
 
 var app = builder.Build();
 

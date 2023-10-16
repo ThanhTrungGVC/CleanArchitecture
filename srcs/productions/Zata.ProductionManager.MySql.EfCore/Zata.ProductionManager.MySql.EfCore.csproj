@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\payments\Zata.PaymentManager.Domain\Zata.PaymentManager.Domain.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libs\Zata.Repository.MySql.EfCore\Zata.Repository.MySql.EfCore.csproj" />
+    <ProjectReference Include="..\Zata.ProductionManager.Domain\Zata.ProductionManager.Domain.csproj" />
   </ItemGroup>
 
 </Project>

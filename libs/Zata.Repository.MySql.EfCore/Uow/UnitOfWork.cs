@@ -3,7 +3,7 @@ using System.Data.Common;
 
 namespace Zata.Repository.MySql.EfCore.Uow
 {
-    public class UnitOfWork<TContext> : ZataEntityFrameworkCore<TContext>, IUnitOfWork where TContext : DbContext
+    public class UnitOfWork<TContext> : ZataEntityFrameworkCore<TContext>, IUnitOfWork<TContext> where TContext : DbContext
     {
         private DbTransaction _dbTransaction = default!;
 
@@ -18,12 +18,12 @@ namespace Zata.Repository.MySql.EfCore.Uow
 
         public async Task<DbTransaction> BeginTransactionAsync(bool isRequireNew = false, CancellationToken cancellationToken = default)
         {
-            var db = await GetDbConnectionAsync(cancellationToken).ConfigureAwait(false);
+            var db = await GetOpenConnectionAsync(cancellationToken).ConfigureAwait(false);
 
             DbTransaction? currentTransaction = default;
 
             if (!isRequireNew)
-                currentTransaction = GetDbTransaction();
+                currentTransaction = GetCurrentTransaction();
 
             _dbTransaction = currentTransaction ?? await db.BeginTransactionAsync(cancellationToken);
 
